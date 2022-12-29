@@ -14,9 +14,11 @@ function App() {
     //value library used here
     try {
       let colors = new Values(color).all(10);
+      setList(colors);
+      //console.log(colors);
     } catch (error) {
       setError(true);
-      console.log(error);
+      //console.log(error);
     }
   };
 
@@ -37,7 +39,18 @@ function App() {
           </button>
         </form>
       </section>
-      <section className='colors'></section>;
+      <section className='colors'>
+        {list.map((color, index) => {
+          return (
+            <SingleColor
+              key={index}
+              {...color}
+              index={index}
+              hexColor={color.hex}
+            />
+          );
+        })}
+      </section>
     </>
   );
 }
