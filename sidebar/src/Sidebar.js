@@ -20,7 +20,6 @@ const Sidebar = () => {
               <a href={url}>
                 {icon}
                 {text}
-                {text}
               </a>
             </li>
           );
